@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    {% block styles %}
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% endblock %}
+
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+  {% block header %}
+    <header>
+      <img src="{{ url_for('static', filename='/img/wolf.png') }}" alt="" class="logo">
+
+      <ul class="menu">
+        <li>
+          <a href="/">Главная</a>
+        </li>
+        <li>
+          <a href="/message">Написать сообщение</a>
+        </li>
+        <li>
+          <a href="#">Наши проекты</a>
+        </li>
+        <li>
+          <a href="#">Контакты</a>
+        </li>
+      </ul>
+    </header>
+  {% endblock %}
+
+  <div class="container">
+    {% block content %}
+
+    {% endblock %}
+  </div>
+
+  {% block footer %}
+
+  {% endblock %}
+
+</body>
+</html>
